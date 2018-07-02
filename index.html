@@ -6,7 +6,7 @@
 	<title>Dice Roll</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	
+
 	<!-- MATH -->
 	<script src="https://unpkg.com/mathjs@5.0.0/dist/math.min.js"></script>
 
@@ -14,13 +14,18 @@
 	<script type="text/javascript" src="scripts/calculator.jquery.js"></script>
 	<script type="text/javascript" src="scripts/start.jquery.js"></script>
 	<script type="text/javascript" src="scripts/dice.jquery.js"></script>
+	<script type="text/javascript" src="scripts/history.jquery.js"></script>
 
 
 	<!-- CSS -->
 	<style type="text/css">	
 	.result{
 		text-align: center;
-		font-size: 80px;
+		font-size: 40px;
+	}
+	.history{
+		height: 400px;
+		overflow: auto;
 	}
 </style>
 
@@ -28,11 +33,19 @@
 <body>
 	<br>
 	<div class="container">
-		<div class="form-group" style="text-align: left;">
-			<input type="text" id="dice" class="form-control" placeholder="Roll some dice">
-			<button class="btn btn-block btn-primary roll">Roll</button>
+		<div class="row">
+			<div class="container col" style="text-align: center;">
+				<h3>History</h3><br>
+				<div class="container history"></div>
+			</div>
+			<div class="container col">
+				<div class="form-group" style="text-align: left;">
+					<input type="text" id="dice" class="form-control" placeholder="Roll some dice">
+					<button class="btn btn-block btn-primary roll">Roll</button>
+				</div>
+				<div class="container result" style=""></div>
+			</div>
 		</div>
-		<div class="container result"></div>
 	</div>
 </body>
 </html>

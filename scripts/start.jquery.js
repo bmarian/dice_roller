@@ -11,4 +11,5 @@ $(function(){
 				calculate(dices);
 		}
 	});
+	show_history();
 });

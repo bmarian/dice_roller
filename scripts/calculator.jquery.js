@@ -49,6 +49,7 @@ function calculate(dices){
 		//Calculates the result of the generated expresion
 		let math_res = math.eval(dices);
 		$(".result").html("Total: " + math_res + "<br>" + dices);
+		register_roll(dices, math_res);
 	}catch(e){
 		console.log(e);
 		$(".result").html("Wrong expresion!");
