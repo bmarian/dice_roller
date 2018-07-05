@@ -74,3 +74,6 @@ typings/
 
 #release build
 release-builds
+
+#phpstorm
+.idea
