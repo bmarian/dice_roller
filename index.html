@@ -1,51 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dice Roll</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<!-- MATH -->
-	<script src="https://unpkg.com/mathjs@5.0.0/dist/math.min.js"></script>
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
-	<!-- SCRIPTS -->
-	<script type="text/javascript" src="scripts/calculator.jquery.js"></script>
-	<script type="text/javascript" src="scripts/start.jquery.js"></script>
-	<script type="text/javascript" src="scripts/dice.jquery.js"></script>
-	<script type="text/javascript" src="scripts/history.jquery.js"></script>
+    <!--Result tab and history tab css-->
+    <style type="text/css">
+        .result {
+            height: 200px;
+            overflow: auto;
+        }
 
+        .left-stats {
+            margin-top: 5px;
+        }
 
-	<!-- CSS -->
-	<style type="text/css">	
-	.result{
-		text-align: center;
-		font-size: 40px;
-	}
-	.history{
-		height: 400px;
-		overflow: auto;
-	}
-</style>
+        .stats {
+            margin-top: 5px;
+        }
+    </style>
 
+    <meta charset="UTF-8">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--Jquery-->
+    <script>
+        window.$ = window.jQuery = require("jquery");
+    </script>
+
+    <!--math.js-->
+    <script src="https://unpkg.com/mathjs@5.0.0/dist/math.min.js"></script>
+
+    <!--custom jquery.js scripts-->
+    <script type="text/javascript" src="scripts/calculator.jquery.js"></script>
+    <script type="text/javascript" src="scripts/start.jquery.js"></script>
+    <script type="text/javascript" src="scripts/dice.jquery.js"></script>
+    <script type="text/javascript" src="scripts/history.jquery.js"></script>
+    <script type="text/javascript" src="scripts/stats.jquery.js"></script>
+
+    <title>Dice Roll</title>
 </head>
 <body>
-	<br>
-	<div class="container">
-		<div class="row">
-			<div class="container col" style="text-align: center;">
-				<h3>History</h3><br>
-				<div class="container history"></div>
-			</div>
-			<div class="container col">
-				<div class="form-group" style="text-align: left;">
-					<input type="text" id="dice" class="form-control" placeholder="Roll some dice">
-					<button class="btn btn-block btn-primary roll">Roll</button>
-				</div>
-				<div class="container result" style=""></div>
-			</div>
-		</div>
-	</div>
+
+<div class="container center-align flow-text">
+    <div class="row">
+        <div class="col s5 pull-s1 left-stats">
+            <div class="history"></div>
+        </div>
+        <div class="col s6 push-s5 pinned">
+            <div class="stats"></div>
+            <div class="input-field col s12">
+                <input type="text" id="dice" history="-1" class="form-control s10" placeholder="Roll some dices"
+                       autofocus>
+                <button class="btn btn-block btn-primary roll col s12">Roll</button>
+            </div>
+            <div class="container result"></div>
+        </div>
+    </div>
+</div>
+
+<!--Materialize.js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
 </body>
 </html>
