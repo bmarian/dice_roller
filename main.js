@@ -5,7 +5,7 @@ const path = require("path");
 const {app, BrowserWindow, Menu} = electron;
 
 let main;
-let mode = "release"; //development - release
+let mode = "development"; //development - release
 
 // Listen for app to be ready
 app.on("ready", function () {
