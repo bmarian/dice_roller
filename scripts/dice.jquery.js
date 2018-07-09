@@ -6,7 +6,8 @@ class Dice {
     }
 
     convert_dice() {
-        let result = "", dice_roll;
+        let result = "",
+            dice_roll;
         for (let i = 0; i < this.nr_of_dices - 1; i++) {
             dice_roll = Math.floor((Math.random() * (this.type_of_dice)) + 1);
             result += dice_roll + " + ";
@@ -17,7 +18,8 @@ class Dice {
     }
 
     drop_lowest(number_of_drops) {
-        let result = "", dice_rolls = [];
+        let result = "",
+            dice_rolls = [];
         for (let i = 0; i < this.nr_of_dices; i++) {
             dice_rolls.push(Math.floor((Math.random() * (this.type_of_dice)) + 1));
         }
@@ -38,7 +40,8 @@ class Dice {
     }
 
     drop_highest(number_of_drops) {
-        let result = "", dice_rolls = [];
+        let result = "",
+            dice_rolls = [];
         for (let i = 0; i < this.nr_of_dices; i++) {
             dice_rolls.push(Math.floor((Math.random() * (this.type_of_dice)) + 1));
         }

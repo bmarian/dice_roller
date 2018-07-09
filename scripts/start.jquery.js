@@ -60,4 +60,3 @@ function load_history_down() {
         }
     }
 }
-

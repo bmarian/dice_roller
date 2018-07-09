@@ -58,15 +58,14 @@ function calculate(dices) {
     });
 
     try {
-        //Calculates the result of the generated expresion
+        //Calculates the result of the generated expression
         let math_res = math.eval(dices);
         let show = dramatic_effect(dices);
         $(".result").html(`${(typeof math_res) !== "number" ? `${show}` : `Total: ${math_res} <br> ${show}`}`);
         register_roll(show, math_res);
-    }
-    catch (e) {
+    } catch (e) {
         console.log(e);
-        $(".result").html("Wrong expresion!");
+        $(".result").html("Wrong expression!");
     }
 }
 

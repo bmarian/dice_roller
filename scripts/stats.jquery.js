@@ -63,15 +63,14 @@ function make_stats() {
     if (stats) {
         stats = JSON.parse(stats);
     } else {
-        stats =
-            {
-                STR: 10,
-                DEX: 10,
-                CON: 10,
-                INT: 10,
-                WIS: 10,
-                CHA: 10
-            };
+        stats = {
+            STR: 10,
+            DEX: 10,
+            CON: 10,
+            INT: 10,
+            WIS: 10,
+            CHA: 10
+        };
         localStorage.stats = JSON.stringify(stats);
     }
     for (let i in stats) {
