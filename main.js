@@ -29,7 +29,7 @@ app.on("ready", function () {
         const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
         Menu.setApplicationMenu(mainMenu);
     } else {
-        main.webContents.openDevTools()
+        main.webContents.openDevTools();
     }
 });
 
