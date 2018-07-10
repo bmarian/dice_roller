@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,7 +27,7 @@
     <meta charset="UTF-8">
 
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--Jquery-->
     <script>
@@ -37,35 +38,46 @@
     <script src="https://unpkg.com/mathjs@5.0.0/dist/math.min.js"></script>
 
     <!--custom jquery.js scripts-->
+    <script>
+        require("./scripts/start.jquery.js")
+    </script>
     <script type="text/javascript" src="scripts/calculator.jquery.js"></script>
-    <script type="text/javascript" src="scripts/start.jquery.js"></script>
     <script type="text/javascript" src="scripts/dice.jquery.js"></script>
     <script type="text/javascript" src="scripts/history.jquery.js"></script>
     <script type="text/javascript" src="scripts/stats.jquery.js"></script>
 
     <title>Dice Roll</title>
 </head>
+
 <body>
 
-<div class="container center-align flow-text">
-    <div class="row">
-        <div class="col s5 pull-s1 left-stats">
-            <div class="history"></div>
-        </div>
-        <div class="col s6 push-s5 pinned">
-            <div class="stats"></div>
-            <div class="input-field col s12">
-                <input type="text" id="dice" history="-1" class="form-control s10" placeholder="Roll some dices"
-                       autofocus>
-                <button class="btn btn-block btn-primary roll col s12">Roll</button>
+    <div class="container center-align flow-text">
+        <div class="row">
+            <div class="col s5 pull-s1 left-stats">
+                <div class="history"></div>
             </div>
-            <div class="container result"></div>
+            <div class="col s6 push-s5 pinned">
+                <div class="stats"></div>
+                <div class="input-field col s12">
+                    <input type="text" id="dice" history="-1" class="form-control s10" placeholder="Roll some dices" autofocus>
+                    <button class="btn btn-block btn-primary roll col s12">Roll</button>
+                </div>
+                <div class="container result"></div>
+            </div>
         </div>
     </div>
-</div>
 
-<!--Materialize.js-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red tooltipped" data-position="left" data-tooltip="Open the DM page">
+            <i class="large material-icons">person</i>
+        </a>
+    </div>
+
+
+    <!--Materialize.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
 </body>
+
 </html>

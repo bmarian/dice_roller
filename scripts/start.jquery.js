@@ -1,3 +1,6 @@
+const electron = require("electron");
+let ipc = electron.ipcRenderer;
+
 $(function () {
     $(".roll").on("click", function (e) {
         let dices = $("#dice").val();
@@ -31,6 +34,10 @@ $(function () {
     });
     show_history();
     make_stats();
+    $('.tooltipped').tooltip();
+    $(".fixed-action-btn").on("click", function () {
+        ipc.send("show-dm-page");
+    });
 });
 
 function load_history_up() {

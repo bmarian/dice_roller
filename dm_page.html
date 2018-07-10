@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <meta charset="UTF-8">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Jquery-->
+    <script>
+        window.$ = window.jQuery = require("jquery");
+    </script>
+
+    <!-- Scripts -->
+    <script>
+        // window.Sortable = require("sortablejs");
+        require("./scripts/dm_page.jquery");
+    </script>
+
+    <title>DM Page</title>
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <nav>
+        <div class="nav-wrapper cyan darken-4">
+            <ul class="left">
+
+                <li>
+                    <a class="waves-effect waves-light btn" id="add">Add
+                        <i class="material-icons left">add</i>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="waves-effect waves-light btn" id="remove_all">Remove All
+                        <i class="material-icons left">delete_forever</i>
+                    </a>
+                </li>
+                <li>
+                    <h6 class="center-align valign-wrapper">
+                        <p class="orange-text lighten-1" style="display: none;" id="unsaved_changes">UNSAVED CHANGES!</p>  
+                    </h6>
+                </li>
+            </ul>
+
+            <ul class="right">
+                <li>
+                    <a class="waves-effect waves-light btn disabled" id="save_all">Save To File
+                        <i class="material-icons left">save</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="waves-effect waves-light btn" id="refresh"><i class="material-icons">refresh</i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Nav Bar -->
+
+    <div class="container row center-align monsters" style="margin-top: 30px; display: none;"></div>
+
+    <!--Materialize.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+</body>
+
+</html>

@@ -1,11 +1,17 @@
 const electron = require("electron");
 const url = require("url");
 const path = require("path");
+let ipc = electron.ipcMain;
 
-const {app, BrowserWindow, Menu} = electron;
+const {
+    app,
+    BrowserWindow,
+    Menu
+} = electron;
 
 let main;
-let mode = "development"; //development - release
+let dm_page;
+let mode = "release"; //development - release
 
 // Listen for app to be ready
 app.on("ready", function () {
@@ -25,6 +31,10 @@ app.on("ready", function () {
         app.quit();
     });
 
+    ipc.on("show-dm-page", function () {
+        create_dm_page();
+    });
+
     if (mode === "release") {
         const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
         Menu.setApplicationMenu(mainMenu);
@@ -35,3 +45,21 @@ app.on("ready", function () {
 
 // Menu template
 const mainMenuTemplate = [];
+
+function create_dm_page() {
+    dm_page = new BrowserWindow({
+        width: 850,
+        height: 800,
+    });
+
+    dm_page.loadURL(url.format({
+        pathname: path.join(__dirname, 'dm_page.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+
+    // On closing dm page
+    dm_page.on("close", function () {
+        dm_page = null;
+    });
+}

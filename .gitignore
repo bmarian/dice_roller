@@ -77,6 +77,7 @@ release-builds
 
 #phpstorm
 .idea
+.vscode
 
 #jshint
 .jshintrc
