@@ -27,7 +27,7 @@ $(function () {
         if (!(event.which == 115 && event.ctrlKey) && !(event.which == 19))
             return true;
         else {
-            if(!$save_all_button.hasClass("disabled")){
+            if (!$save_all_button.hasClass("disabled")) {
                 event.preventDefault();
                 $(event.target).blur();
                 save_all($monsters, $changes, $save_all_button);
@@ -60,9 +60,13 @@ $(function () {
         }
     });
 
-    $("input").on("keyup", function () {
-        $changes.fadeIn();
-        $save_all_button.removeClass("disabled");
+    $(".monsters").on("keyup", function (event) {
+        $target = $(event.target);
+        if ($target.is("input")) {
+            console.log($target.val());
+            $changes.fadeIn();
+            $save_all_button.removeClass("disabled");
+        }
     });
 });
 

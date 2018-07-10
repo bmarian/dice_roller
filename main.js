@@ -11,7 +11,7 @@ const {
 
 let main;
 let dm_page;
-let mode = "release"; //development - release
+let mode = "development"; //development - release
 
 // Listen for app to be ready
 app.on("ready", function () {
@@ -57,6 +57,10 @@ function create_dm_page() {
         protocol: 'file:',
         slashes: true
     }));
+
+    if (mode === "development") {
+        dm_page.webContents.openDevTools();
+    }
 
     // On closing dm page
     dm_page.on("close", function () {
