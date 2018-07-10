@@ -4,14 +4,22 @@ $(function () {
     let $save_all_button = $("#save_all");
     load_all();
 
+
+
+    window.setInterval(function () {
+        clear_empty($monsters);
+    }, 1000);
+
+
+    // Add button was pressed
     $("#add").on("click", function () {
         $monsters.slideDown("fast");
         $(monster_card).appendTo($monsters).slideDown();
         $changes.fadeIn();
         $save_all_button.removeClass("disabled");
-
     });
 
+    // Remove All button was pressed
     $("#remove_all").on("click", function () {
         $monsters.slideUp();
         $monsters.empty();
@@ -19,29 +27,41 @@ $(function () {
         $save_all_button.removeClass("disabled");
     });
 
+    // Save to file button was pressed
     $save_all_button.on("click", function () {
         save_all($monsters, $changes, $(this));
     });
 
-    $(window).keypress(function (event) {
-        if (!(event.which == 115 && event.ctrlKey) && !(event.which == 19))
-            return true;
-        else {
-            if (!$save_all_button.hasClass("disabled")) {
-                event.preventDefault();
-                $(event.target).blur();
-                save_all($monsters, $changes, $save_all_button);
+    // Check for CTRL + S | CTRL + N
+    $(window).bind('keydown', function (event) {
+        if (event.ctrlKey || event.metaKey) {
+            switch (String.fromCharCode(event.which).toLowerCase()) {
+                case 's':
+                    event.preventDefault();
+                    if (!$save_all_button.hasClass("disabled")) {
+                        $(event.target).blur();
+                        save_all($monsters, $changes, $save_all_button);
+                    }
+                    break;
+                case 'n':
+                    event.preventDefault();
+                    $monsters.slideDown("fast");
+                    $(monster_card).appendTo($monsters).slideDown();
+                    $changes.fadeIn();
+                    $save_all_button.removeClass("disabled");
+                    break;
             }
-            return false;
         }
     });
 
+    // Refresh button was pressed
     $("#refresh").on("click", function () {
         load_all();
         $changes.fadeOut();
         $save_all_button.addClass("disabled");
     });
 
+    // Discard | Save button was pressed
     $(".monsters").on("click", function (event) {
         let $button = $(event.target);
         if ($button.attr("id") === "monster_save") {
@@ -111,6 +131,13 @@ function save_monster($card) {
     $cha.attr("value", $cha.val());
 }
 
+function clear_empty($page) {
+    $page.children().each(function () {
+        if ($(this).children().length === 0) {
+            $(this).remove();
+        }
+    });
+}
 const monster_card =
     `
     <div class="col s6" style="display: none;">
