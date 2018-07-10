@@ -24,12 +24,20 @@
         require("./scripts/dm_page.jquery");
     </script>
 
+    <style>
+        .sticky-nav {
+            top: 0;
+            position: fixed;
+            z-index:1000;
+        }
+    </style>
+
     <title>DM Page</title>
 </head>
 
 <body>
     <!-- Nav Bar -->
-    <nav>
+    <nav class="sticky-nav">
         <div class="nav-wrapper cyan darken-4">
             <ul class="left">
 
@@ -46,7 +54,7 @@
                 </li>
                 <li>
                     <h6 class="center-align valign-wrapper">
-                        <p class="orange-text lighten-1" style="display: none;" id="unsaved_changes">UNSAVED CHANGES!</p>  
+                        <p class="orange-text lighten-1" style="display: none;" id="unsaved_changes">UNSAVED CHANGES!</p>
                     </h6>
                 </li>
             </ul>
@@ -58,14 +66,16 @@
                     </a>
                 </li>
                 <li>
-                    <a class="waves-effect waves-light btn" id="refresh"><i class="material-icons">refresh</i></a>
+                    <a class="waves-effect waves-light btn" id="refresh">
+                        <i class="material-icons">refresh</i>
+                    </a>
                 </li>
             </ul>
         </div>
     </nav>
     <!-- Nav Bar -->
 
-    <div class="container row center-align monsters" style="margin-top: 30px; display: none;"></div>
+    <div class="container row center-align monsters" style="margin-top: 100px; display: none;"></div>
 
     <!--Materialize.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
