@@ -56,6 +56,7 @@ $(function () {
 
     // Refresh button was pressed
     $("#refresh").on("click", function () {
+        $monsters.html("");
         load_all();
         $changes.fadeOut();
         $save_all_button.addClass("disabled");
